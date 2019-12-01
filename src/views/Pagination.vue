@@ -67,7 +67,7 @@
                 return Math.ceil((this.pages[0] + 1) / 2);
             },
             middleLast(){
-                return Math.ceil((this.totalPages - this.pages[this.pages.length - 1]) / 2);
+                return Math.ceil((this.totalPages + Number(this.$route.params.page)) / 2);
             }
         },
         methods: {
