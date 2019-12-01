@@ -4,7 +4,8 @@
         <h1 class="error" v-else-if="error">ОШИБКА ЗАГРУЗКИ ДАННЫХ :-(</h1>
         <div class="app-wrap" v-else>
             <PhotoCard
-                    v-for="photoCard of photoCardArray"
+                    v-for="(photoCard, id) of photoCardArray"
+                    :key="id"
                     :photoCard="photoCard"
             />
             <Pagination
@@ -21,7 +22,6 @@
     import unsplash from "@/unsplash";
 
     export default {
-        name: 'app',
         components: {
             PhotoCard,
             Pagination,
